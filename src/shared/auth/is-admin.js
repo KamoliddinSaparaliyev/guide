@@ -8,13 +8,13 @@ const express = require("express");
  * @param {express.NextFunction} next
  */
 
-const isUser = async (req, res, next) => {
+const isAdmin = async (req, res, next) => {
   try {
-    if (req.user.is_super) throw new ForbiddenError("Ruxsat yo'q");
+    if (req.user.role === "employee") throw new ForbiddenError("Ruxsat yo'q");
 
-    return res.status(200);
+    next();
   } catch (error) {
     next(error);
   }
 };
-module.exports = isUser;
+module.exports = isAdmin;

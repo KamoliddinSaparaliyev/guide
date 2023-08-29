@@ -2,13 +2,12 @@ const { NotFoundError } = require("../../shared/errors");
 const User = require("./User");
 
 const removeUser = async ({ id }) => {
-  const existing = await User.findOne({
-    _id: id,
-    is_deleted: false,
-    is_super: false,
-  });
+  const existing = await User.findById(id);
+
   if (!existing) throw new NotFoundError("User not found");
 
-  return User.findByIdAndUpdate(id, { is_deleted: true });
+  const data = await User.findByIdAndRemove(id);
+
+  return { data };
 };
 module.exports = removeUser;

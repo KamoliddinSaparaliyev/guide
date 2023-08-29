@@ -1,12 +1,12 @@
 const { NotFoundError } = require("../../shared/errors");
 const User = require("./User");
 
-const showUser = async ({ id }) => {
-  const user = await User.findOne({ _id: id });
+const showUser = async (id) => {
+  const data = await User.findById(id);
 
-  if (!user) throw new NotFoundError("User not found");
+  if (!data) throw new NotFoundError("User not found");
 
-  return user;
+  return { data };
 };
 
 module.exports = showUser;

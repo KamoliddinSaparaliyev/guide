@@ -1,0 +1,39 @@
+GET http://localhost:3000/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzI5NTU3OCwiZXhwIjoxNjkzMzgxOTc4fQ.eQmFX6kFAWTiaPk6HQ_tPrDdGkslz2HMpqyjr68Y79c
+
+###
+GET http://localhost:3000/users/64eda30e84f60d5c2d3f3947
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzI5NTU3OCwiZXhwIjoxNjkzMzgxOTc4fQ.eQmFX6kFAWTiaPk6HQ_tPrDdGkslz2HMpqyjr68Y79c
+
+###
+POST http://localhost:3000/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzI5NTU3OCwiZXhwIjoxNjkzMzgxOTc4fQ.eQmFX6kFAWTiaPk6HQ_tPrDdGkslz2HMpqyjr68Y79c
+Content-Type: application/json
+
+{
+    "first_name": "Jone",
+    "last_name": "Doe",
+    "age": 23,
+    "role": "employee",
+    "username": "jonedoe11",
+    "password": "1234"
+}   
+
+###
+PATCH http://localhost:3000/users/me
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzMxMjk1MCwiZXhwIjoxNjkzMzk5MzUwfQ.J23noXALYmZQceivC9WIMxAF75y-pO6vvgn90iIxxIo
+Content-Type: application/json
+
+{
+    "role": "employee",
+    "password": "1234"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "jonedoe11",
+    "password": "1234"
+}

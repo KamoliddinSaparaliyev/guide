@@ -18,7 +18,7 @@ function buildSortSchema(validFields) {
     by: Joi.string()
       .valid(...validFields)
       .default(validFields[0]),
-    order: Joi.string().valid("asc", "desc").default("asc"),
+    order: Joi.string().valid("asc", "desc"),
   });
 }
 

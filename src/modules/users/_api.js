@@ -1,4 +1,5 @@
 const express = require("express");
+const isLoggedIn = require("../../shared/auth/is-loggedin");
 const {
   postUser,
   getUsers,
@@ -7,17 +8,21 @@ const {
   deleteUser,
   loginUser,
   patchMe,
+  getMe,
 } = require("./_controllers");
-const isLoggedIn = require("../../shared/auth/is-loggedin");
+const isAdmin = require("../../shared/auth/is-admin");
 
 const router = express.Router();
 
-router.post("/users", isLoggedIn, postUser);
-router.get("/users", isLoggedIn, getUsers);
-router.get("/users/:id", isLoggedIn, getUser);
-router.patch("/users/:id", isLoggedIn, patchUser);
+router.get("/users", isLoggedIn, isAdmin, getUsers);
+router.get("/users/me", isLoggedIn, getMe);
+router.get("/users/:id", isLoggedIn, isAdmin, getUser);
+router.post("/users", isLoggedIn, isAdmin, postUser);
 router.patch("/users/me", isLoggedIn, patchMe);
-router.delete("/users/:id", isLoggedIn, deleteUser);
+router.patch("/users/:id", isLoggedIn, isAdmin, patchUser);
+router.delete("/users/:id", isLoggedIn, isAdmin, deleteUser);
 router.post("/users/login", loginUser);
+
+//employee
 
 module.exports = router;
