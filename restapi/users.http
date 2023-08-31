@@ -1,14 +1,19 @@
+###
 GET http://localhost:3000/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzI5NTU3OCwiZXhwIjoxNjkzMzgxOTc4fQ.eQmFX6kFAWTiaPk6HQ_tPrDdGkslz2HMpqyjr68Y79c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzQ4NDg2OSwiZXhwIjoxNjkzNTcxMjY5fQ.ROln2Bn2c4hO08VaNYBHXAoSMwnDBn6Ahy219gasSoU
 
 ###
 GET http://localhost:3000/users/64eda30e84f60d5c2d3f3947
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzI5NTU3OCwiZXhwIjoxNjkzMzgxOTc4fQ.eQmFX6kFAWTiaPk6HQ_tPrDdGkslz2HMpqyjr68Y79c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzQ4NDg2OSwiZXhwIjoxNjkzNTcxMjY5fQ.ROln2Bn2c4hO08VaNYBHXAoSMwnDBn6Ahy219gasSoU
+
+### 
+GET http://localhost:3000/users/me
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzQ4NDc1NSwiZXhwIjoxNjkzNTcxMTU1fQ.Kt3vTkUC79kgt-wWKTqbuxWMVieYc2pei8ZyDEGg7Ik
+
 
 ###
 POST http://localhost:3000/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzI5NTU3OCwiZXhwIjoxNjkzMzgxOTc4fQ.eQmFX6kFAWTiaPk6HQ_tPrDdGkslz2HMpqyjr68Y79c
-Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzQ4NDc1NSwiZXhwIjoxNjkzNTcxMTU1fQ.Kt3vTkUC79kgt-wWKTqbuxWMVieYc2pei8ZyDEGg7IkContent-Type: application/json
 
 {
     "first_name": "Jone",
@@ -21,7 +26,7 @@ Content-Type: application/json
 
 ###
 PATCH http://localhost:3000/users/me
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzMxMjk1MCwiZXhwIjoxNjkzMzk5MzUwfQ.J23noXALYmZQceivC9WIMxAF75y-pO6vvgn90iIxxIo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzQ4NDc1NSwiZXhwIjoxNjkzNTcxMTU1fQ.Kt3vTkUC79kgt-wWKTqbuxWMVieYc2pei8ZyDEGg7Ik
 Content-Type: application/json
 
 {
@@ -34,6 +39,6 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "jonedoe11",
+    "username": "jonedoe",
     "password": "1234"
 }

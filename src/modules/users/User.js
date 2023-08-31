@@ -30,9 +30,18 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
+    id: false,
     versionKey: false,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   }
 );
+
+userSchema.virtual("guides", {
+  ref: "UserGuide",
+  localField: "_id",
+  foreignField: "user_id",
+});
 
 const User = mongoose.model("User", userSchema);
 

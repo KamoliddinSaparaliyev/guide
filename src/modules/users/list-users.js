@@ -7,19 +7,19 @@ const listUsers = async ({ q, page, sort, filters }) => {
 
   if (q) {
     filter.$or = [
-      { full_name: { $regex: q, $options: "i" } },
+      { first_name: { $regex: q, $options: "i" } },
       { last_name: { $regex: q, $options: "i" } },
     ];
   }
 
-  const total = await User.countDocuments(filter);
-  const data = await User.find(filter)
+  const total = await User.countDocuments({ ...filter });
+  const data = await User.find({ ...filter })
     .sort({ [by]: order === "desc" ? -1 : 1 })
-    .skip(offset)
-    .limit(limit * offset)
+    .limit(+limit)
+    .skip(+offset * +limit)
     .select("-password");
 
-  return { data, pageInfo: { limit, offset, total } };
+  return { data, pageInfo: { limit: +limit, offset: +offset, total } };
 };
 
 module.exports = listUsers;
