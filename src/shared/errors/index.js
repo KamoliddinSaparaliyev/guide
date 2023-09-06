@@ -38,20 +38,9 @@ class ForbiddenError extends Error {
   }
 }
 
-class ConflictError extends Error {
-  constructor(msg) {
-    super(msg);
-
-    if (Error.captureStackTrace) {
-      Error.captureStackTrace(this, ConflictError);
-    }
-  }
-}
-
 module.exports = {
   BadRequestError,
   NotFoundError,
   ForbiddenError,
   UnauthorizedError,
-  ConflictError,
 };

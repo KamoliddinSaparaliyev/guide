@@ -12,7 +12,7 @@ const login = async ({ username, password }) => {
   if (!match) throw new UnauthorizedError("Username or password wrong");
 
   const token = sign(
-    { user: { id: existing.id, role: existing.role } },
+    { user: { id: existing._id, role: existing.role } },
     config.jwt.secret,
     {
       expiresIn: "1d",

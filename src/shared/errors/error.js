@@ -4,7 +4,6 @@ const {
   UnauthorizedError,
   ForbiddenError,
   NotFoundError,
-  ConflictError,
 } = require(".");
 
 /**
@@ -12,7 +11,6 @@ const {
  * @param {express.Response} res
  * @param {express.NextFunction} next
  * @param {express.ErrorRequestHandler} err
- * @returns
  */
 const errorMiddlewareFunc = (err, req, res, next) => {
   let status = 500;
@@ -21,7 +19,6 @@ const errorMiddlewareFunc = (err, req, res, next) => {
   else if (err instanceof UnauthorizedError) status = 401;
   else if (err instanceof ForbiddenError) status = 403;
   else if (err instanceof NotFoundError) status = 404;
-  else if (err instanceof ConflictError) status = 409;
 
   console.log(err.message);
 

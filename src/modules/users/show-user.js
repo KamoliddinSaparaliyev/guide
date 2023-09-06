@@ -16,16 +16,16 @@ const showUser = async (id) => {
     match: { completed: false },
   });
 
-  const todo_guies = todo.guides.length;
-  const read_guies = read.guides.length;
-  const total_guides = todo_guies + read_guies;
+  const todo_guides = todo.guides.length;
+  const read_guides = read.guides.length;
+  const total_guides = todo_guides + read_guides;
 
   return {
     data: {
       ...user._doc,
       total_guides,
-      todo_guies,
-      read_guies,
+      todo_guides,
+      read_guides,
     },
   };
 };

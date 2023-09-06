@@ -122,6 +122,7 @@ const getUser = async (req, res, next) => {
  */
 const getMe = async (req, res, next) => {
   try {
+    console.log(req.user);
     const result = await showUser(req.user.id);
 
     res.status(200).json({
@@ -169,6 +170,7 @@ const loginUser = async (req, res, next) => {
     next(error);
   }
 };
+
 module.exports = {
   postUser,
   getUser,
