@@ -23,6 +23,4 @@ router.patch("/users/:id", isLoggedIn, isAdmin, patchUser);
 router.delete("/users/:id", isLoggedIn, isAdmin, deleteUser);
 router.post("/users/login", loginUser);
 
-//employee
-
 module.exports = router;

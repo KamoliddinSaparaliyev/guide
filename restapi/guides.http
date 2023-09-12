@@ -1,37 +1,47 @@
 ###
 GET http://localhost:3000/guides?page[limit]=10&page[offset]=1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzQ4NDc1NSwiZXhwIjoxNjkzNTcxMTU1fQ.Kt3vTkUC79kgt-wWKTqbuxWMVieYc2pei8ZyDEGg7Ik
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 ###
 GET http://localhost:3000/guides/64ee042741580b5024af5119
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzQ4NDc1NSwiZXhwIjoxNjkzNTcxMTU1fQ.Kt3vTkUC79kgt-wWKTqbuxWMVieYc2pei8ZyDEGg7Ik
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 ###
 POST http://localhost:3000/guides
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzQ4NDc1NSwiZXhwIjoxNjkzNTcxMTU1fQ.Kt3vTkUC79kgt-wWKTqbuxWMVieYc2pei8ZyDEGg7Ik
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 Content-Type: application/json
 
 {
-    "title":"Bu guide notify true bo'lgan",
-    "content":"Bu true",
-    "notify":true
+    "title":"Test guide title",
+    "content":"Guideni o'zgarishi",
+    "notify":false
 }   
 
 ###
-PATCH http://localhost:3000/guides/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGU2MWY5NzFiMDY4OTExM2NiNTlkIiwicm9sZSI6ImVtcGxveWVlIn0sImlhdCI6MTY5MzMxMjk1MCwiZXhwIjoxNjkzMzk5MzUwfQ.J23noXALYmZQceivC9WIMxAF75y-pO6vvgn90iIxxIo
+PATCH http://localhost:3000/guides/64ee042741580b5024af5119
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 Content-Type: application/json
 
 {
-    "role": "employee",
-    "password": "1234"
+    "title": "employee"
 }
 
 ###
-POST http://localhost:3000/guides/login
+GET http://localhost:3000/user-guides?filters[completed]=false
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
+
+###
+GET http://localhost:3000/user-guides/64ee075a6622293c9b3949dc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
+
+
+###
+POST http://localhost:3000/users-guides/bulk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 Content-Type: application/json
 
 {
-    "username": "jonedoe11",
-    "password": "1234"
+    "guide_id":"64f08acdd3f129f27ab066ad",
+    "user_ids":["64ede61f971b0689113cb59d","64ede61f971b0689113cb59d","64ede61f971b0689113cb59d"]
 }
+
+
+ 

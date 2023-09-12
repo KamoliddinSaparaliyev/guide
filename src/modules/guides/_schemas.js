@@ -1,5 +1,9 @@
 const Joi = require("joi");
-const { pageSchema, buildSortSchema } = require("../../shared/g-schema");
+const {
+  pageSchema,
+  buildSortSchema,
+  idValid,
+} = require("../../shared/g-schema");
 
 const postGuideSchema = {
   body: Joi.object({
@@ -9,16 +13,19 @@ const postGuideSchema = {
   }),
 };
 
-const showGuideSchema = {
-  params: Joi.object({
-    id: Joi.string(),
+const postUserGuideSchema = {
+  body: Joi.object({
+    guide_id: Joi.string().required(),
+    user_ids: Joi.array().items(Joi.string()),
   }),
 };
 
+const showGuideSchema = {
+  ...idValid,
+};
+
 const patchGuideSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
+  ...idValid,
   body: Joi.object({
     title: Joi.string(),
     content: Joi.string(),
@@ -27,9 +34,7 @@ const patchGuideSchema = {
 };
 
 const deleteGuideSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
+  ...idValid,
 };
 
 const listGuidesSchema = {
@@ -40,10 +45,28 @@ const listGuidesSchema = {
   }),
 };
 
+const listUsersGuidesSchema = {
+  query: Joi.object({
+    filters: { completed: Joi.boolean() },
+  }),
+};
+
+const showUserGuideSchema = {
+  ...idValid,
+};
+
+const editUserGuideSchema = {
+  ...idValid,
+};
+
 module.exports = {
   postGuideSchema,
   showGuideSchema,
   patchGuideSchema,
   deleteGuideSchema,
   listGuidesSchema,
+  listUsersGuidesSchema,
+  showUserGuideSchema,
+  postUserGuideSchema,
+  editUserGuideSchema,
 };

@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+const config = require("../shared/config");
 
 require("dotenv/config");
 
 module.exports = function () {
   return mongoose
-    .connect(`${process.env.DB_URL}`, {
+    .connect(`${config.db.url}/${config.db.name}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })

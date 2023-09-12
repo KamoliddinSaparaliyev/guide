@@ -1,29 +1,31 @@
 ###
-GET http://localhost:3000/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE2OTM1NTc0ODEsImV4cCI6MTY5MzY0Mzg4MX0.vkDDH-89yyUds0P3taLGZ7LCqclWfmCbL20pGPsczW4
+GET http://localhost:3000/users?username=jonedoe
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 ###
 GET http://localhost:3000/users/64eda30e84f60d5c2d3f3947
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRlZGEzODJmN2ExOWM2NjM1MmQxNWE5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5MzQ4NDg2OSwiZXhwIjoxNjkzNTcxMjY5fQ.ROln2Bn2c4hO08VaNYBHXAoSMwnDBn6Ahy219gasSoU
+Authorization: eeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 
 ### 
 GET http://localhost:3000/users/me
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE2OTM1NTc0ODEsImV4cCI6MTY5MzY0Mzg4MX0.vkDDH-89yyUds0P3taLGZ7LCqclWfmCbL20pGPsczW4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 
 ###
 POST http://localhost:3000/users
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE2OTM1NTc0ODEsImV4cCI6MTY5MzY0Mzg4MX0.vkDDH-89yyUds0P3taLGZ7LCqclWfmCbL20pGPsczW4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
+Content-Type: application/json
+
 {
     "first_name": "Jone",
     "last_name": "Doe",
     "age": 23,
-    "role": "employee",
-    "username": "jonedoe11",
+    "role": "admin",
+    "username": "jonedoe",
     "password": "1234"
 }   
 
 ###
 PATCH http://localhost:3000/users/me
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InJvbGUiOiJhZG1pbiJ9LCJpYXQiOjE2OTM1NTc0ODEsImV4cCI6MTY5MzY0Mzg4MX0.vkDDH-89yyUds0P3taLGZ7LCqclWfmCbL20pGPsczW4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmZWIxMjdjMjIwZTY5MzQxY2U2ZjQ5Iiwicm9sZSI6ImFkbWluIn0sImlhdCI6MTY5NDQxMzExMSwiZXhwIjoxNjk0NDk5NTExfQ.xmGMUADhzqnWqUFMpvLHwZHI4s3dllifbjWIlqyPNvs
 Content-Type: application/json
 
 {

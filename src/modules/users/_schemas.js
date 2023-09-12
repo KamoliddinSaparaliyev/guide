@@ -1,5 +1,9 @@
 const Joi = require("joi");
-const { pageSchema, buildSortSchema } = require("../../shared/g-schema");
+const {
+  pageSchema,
+  buildSortSchema,
+  idValid,
+} = require("../../shared/g-schema");
 const { UserRole } = require("../../shared/role");
 
 const postUserSchema = {
@@ -14,15 +18,11 @@ const postUserSchema = {
 };
 
 const showUserSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
+  ...idValid,
 };
 
 const patchUserSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
+  ...idValid,
   body: Joi.object({
     first_name: Joi.string(),
     last_name: Joi.string(),
@@ -54,18 +54,14 @@ const patchUserMeSchema = {
 };
 
 const updatePasswordSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
+  ...idValid,
   body: Joi.object({
     password: Joi.string().required,
   }),
 };
 
 const deleteUserSchema = {
-  params: Joi.object({
-    id: Joi.string(),
-  }),
+  ...idValid,
 };
 
 const listUsersSchema = {
@@ -73,6 +69,7 @@ const listUsersSchema = {
     q: Joi.string(),
     sort: buildSortSchema(["id", "age"]),
     page: pageSchema,
+    username: Joi.string(),
     filters: {
       role: Joi.string().valid("admin", "employee"),
     },

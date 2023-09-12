@@ -9,18 +9,19 @@ const cors = require("cors");
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
 
-app.use(errorMiddlewareFunc);
-
 app.use(userRouter);
 app.use(guideRoute);
+
+app.use(errorMiddlewareFunc);
 
 db();
 app.listen(port, () => {

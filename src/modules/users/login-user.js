@@ -6,7 +6,9 @@ const { NotFoundError, UnauthorizedError } = require("../../shared/errors");
 
 const login = async ({ username, password }) => {
   const existing = await User.findOne({ username });
-  if (!existing) throw new NotFoundError("Username or password wrong");
+  if (!existing) {
+    throw new NotFoundError("Username or password wrong");
+  }
 
   const match = await compare(password, existing.password);
   if (!match) throw new UnauthorizedError("Username or password wrong");

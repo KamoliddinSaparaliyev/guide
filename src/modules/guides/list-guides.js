@@ -14,8 +14,6 @@ const listGuides = async ({ q, page, sort }) => {
     .limit(+limit)
     .skip(+offset * +limit);
 
-  console.log(+offset * +limit);
-
   return { data, pageInfo: { limit: +limit, offset: +offset, total } };
 };
 

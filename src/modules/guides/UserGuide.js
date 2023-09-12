@@ -21,6 +21,7 @@ const userGuideSchema = new mongoose.Schema(
 );
 
 userGuideSchema.virtual("guide", {
+  justOne: true,
   ref: "Guide",
   localField: "guide_id",
   foreignField: "_id",

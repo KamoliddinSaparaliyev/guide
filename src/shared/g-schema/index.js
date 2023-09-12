@@ -22,4 +22,10 @@ function buildSortSchema(validFields) {
   });
 }
 
-module.exports = { pageSchema, buildSortSchema };
+const idValid = {
+  params: Joi.object({
+    id: Joi.string().required(),
+  }),
+};
+
+module.exports = { pageSchema, buildSortSchema, idValid };
